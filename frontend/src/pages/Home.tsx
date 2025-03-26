@@ -1,12 +1,14 @@
 import React from "react";
-import BlogList from "../components/BlogList";
+import { Link } from "react-router-dom";
 
 const Home: React.FC = () => {
-    console.log("Home component is rendering");
     return (
-        <div className="home">
-            <h1>Latest Blog Posts</h1>
-            <BlogList />
+        <div>
+            <h1>Welcome to MERN Blog</h1>
+            <p>Explore tech blogs, share your thoughts, and connect with other developers.</p>
+            <Link to="/blogs">
+                <button>View Blogs</button>
+            </Link>
         </div>
     );
 };
