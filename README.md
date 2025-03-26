@@ -1,66 +1,100 @@
-**Week 7: Deployment and DevOps for MERN Applications**
+### **🚀 MERN Blog Platform**  
+A **full-stack blog platform** built using **MongoDB, Express.js, React, and Node.js (MERN Stack)**. Users can create, read, update, and delete blog posts.  
 
-**Objective:**
+---
 
-- Apply DevOps practices to deploy and manage a MERN stack application.
-- Utilize version control, CI/CD pipelines, and cloud hosting platforms.
-- Implement monitoring and logging for application reliability.
+## **📌 Features**  
+✅ Create, Read, Update, and Delete (CRUD) blog posts  
+✅ Categorize blogs and add tags  
+✅ Publish or draft blog posts  
+✅ RESTful API with **express-async-handler** for smooth error handling  
+✅ Backend hosted on **Render** and frontend deployed on **Vercel**  
 
-**Project Suggestion:** Build and deploy a "Personal Blog Platform" where users can create, edit, and publish blog posts. The goal is to focus on deploying and maintaining the application effectively.
+---
 
-**Instructions:**
+## **🛠 Tech Stack**  
+### **Backend:**  
+- **Node.js** + **Express.js**  
+- **MongoDB** + **Mongoose**  
+- **Winston & Morgan** (for logging)  
+- **dotenv** (for environment variables)  
 
-1. **Project Setup:**
-   - Create a new project folder called `mern-blog-platform`.
-   - Ensure the project includes:
-     - A backend with Express.js and MongoDB.
-     - A frontend built with React.
-   
-2. **Version Control:**
-   - Initialize a Git repository and push code to GitHub.
-   - Use feature branches for new functionalities.
-   - Document a clear commit history.
+### **Frontend:**  
+- **React.js (Next.js) + TypeScript**  
+- **Tailwind CSS**  
+- **React Context API** for state management  
 
-3. **Continuous Integration:**
-   - Set up GitHub Actions for automated testing on every push.
-   - Ensure test cases run before merging changes.
-   - Notify contributors of failed builds.
+### **Deployment:**  
+- **Backend** → Render  
+- **Frontend** → Vercel  
+- **Database** → MongoDB Atlas  
 
-4. **Backend Deployment:**
-   - Deploy the backend using Render.
-   - Configure environment variables securely.
-   - Implement PM2 for process management.
+---
 
-5. **Frontend Deployment:**
-   - Deploy the frontend on Vercel.
-   - Connect the frontend to the deployed backend API.
-   - Ensure responsiveness and performance optimization.
+## **🚀 Getting Started**  
 
-6. **Error Handling and Monitoring:**
-   - Integrate a logging tool (e.g., Winston, Morgan) for tracking requests.
-   - Implement Sentry for frontend error tracking.
-   - Monitor server logs using Render's dashboard.
+### **1️⃣ Clone the Repository**  
+```bash
+git clone https://github.com/your-repo/mern-blog-platform.git
+cd mern-blog-platform
+```
 
-7. **Security Considerations:**
-   - Use HTTPS for secure communication.
-   - Store sensitive credentials using environment variables.
-   - Implement basic authentication for accessing the admin panel.
+### **2️⃣ Backend Setup**  
+```bash
+cd backend
+npm install
+```
+#### **Create a `.env` file in the `backend` folder**  
+```env
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+```
+Start the backend server:  
+```bash
+npm start
+```
 
-8. **Documentation:**
-   - Write a `README.md` file that includes:
-     - Project overview.
-     - Steps to install and deploy the application.
-     - Explanation of CI/CD pipeline setup.
-     - Monitoring and security measures.
+### **3️⃣ Frontend Setup**  
+```bash
+cd frontend
+npm install
+npm start
+```
+The frontend should now be running at:  
+🔗 **http://localhost:3000**  
 
-9. **Submission:**
-   - Push your code to your GitHub repository.
+---
 
-**Evaluation Criteria:**
+## **📡 API Endpoints**  
 
-- Successful deployment of both backend and frontend.
-- Proper setup of CI/CD pipelines.
-- Effective use of monitoring and logging tools.
-- Secure handling of environment variables.
-- Clear and structured documentation.
+| Method | Endpoint         | Description              |
+|--------|-----------------|--------------------------|
+| GET    | `/api/v1/blogs` | Fetch all blogs         |
+| GET    | `/api/v1/blogs/:id` | Fetch a single blog |
+| POST   | `/api/v1/blogs` | Create a new blog       |
+| PUT    | `/api/v1/blogs/:id` | Update a blog       |
+| DELETE | `/api/v1/blogs/:id` | Delete a blog       |
+
+---
+
+## **📌 Future Features (Planned)**  
+🚀 User authentication (JWT)  
+🚀 Commenting system  
+🚀 Image uploads  
+🚀 Search & Pagination  
+
+---
+
+## **💡 Contributing**  
+1. **Fork** the repo  
+2. Create a new **branch** (`git checkout -b feature-name`)  
+3. **Commit** your changes (`git commit -m "Added feature"`)  
+4. **Push** to your branch (`git push origin feature-name`)  
+5. Open a **Pull Request**  
+
+---
+
+## **📜 License**  
+This project is open-source and available under the **MIT License**.  
+
 
