@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Blog } from "./types";
 
-const API_URL = "https://mern-blog-app-f9au.onrender.com/blogs";
+const API_URL = "https://mern-blog-app-f9au.onrender.com/api/v1/blogs";
 
 // Get the token from localStorage (or any other storage mechanism)
 const getToken = () => localStorage.getItem("token");

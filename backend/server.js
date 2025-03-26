@@ -107,6 +107,14 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: "Internal Server Error" });
 });
 
+const userRoutes = require("./routes/userRoutes");
+app.use("/api/v1/users", userRoutes);
+
+const commentRoutes = require("./routes/commentRoutes");
+app.use("/api/v1/comments", commentRoutes);
+
+
+
 // Start Server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
