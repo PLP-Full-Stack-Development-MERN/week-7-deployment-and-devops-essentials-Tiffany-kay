@@ -1,22 +1,31 @@
 import React, { useContext } from "react";
 import { BlogContext } from "../context/BlogContext";
+import { Blog } from "../types";
 
 const BlogList: React.FC = () => {
-    const blogContext = useContext(BlogContext);
+  const context = useContext(BlogContext);
 
-    if (!blogContext) return <p>Loading...</p>;
+  if (!context) {
+    throw new Error("BlogList must be used within a BlogProvider");
+  }
 
-    return (
-        <div className="blog-list">
-            {blogContext.blogs.map((blog) => (
-                <div key={blog._id} className="blog-card">
-                    <h2>{blog.title}</h2>
-                    <p>{blog.content.slice(0, 100)}...</p>
-                    <small>By {blog.author} | {new Date(blog.createdAt).toLocaleDateString()}</small>
-                </div>
-            ))}
-        </div>
-    );
+  const { blogs } = context;
+
+  return (
+    <div>
+      {blogs.length > 0 ? (
+        blogs.map((blog: Blog) => (
+          <div key={blog._id}>
+            <h2>{blog.title}</h2>
+            <p>{blog.content}</p>
+            <small>By {blog.author}</small>
+          </div>
+        ))
+      ) : (
+        <p>No blogs available</p>
+      )}
+    </div>
+  );
 };
 
 export default BlogList;

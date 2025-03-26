@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { BlogProvider } from "./context/BlogContext";
 import Home from "./pages/Home";
-//import "./App.css"; // Styling file
+import "./App.css"; // Styling file
 
 const App: React.FC = () => {
     return (

@@ -2,6 +2,8 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const morgan = require("morgan");
+const winston = require("winston");
 
 // Initialize Express
 const app = express();
@@ -9,6 +11,17 @@ const app = express();
 // Middleware
 app.use(express.json()); // Allow JSON requests
 app.use(cors()); // Allow cross-origin requests
+
+const logger = winston.createLogger({
+  level: "info",
+  format: winston.format.json(),
+  transports: [
+    new winston.transports.File({ filename: "error.log", level: "error" }),
+    new winston.transports.File({ filename: "combined.log" }),
+  ],
+});
+
+app.use(morgan("combined", { stream: { write: (message) => logger.info(message) } }));
 
 // Connect to MongoDB Atlas
 mongoose.connect(process.env.MONGO_URI, {
