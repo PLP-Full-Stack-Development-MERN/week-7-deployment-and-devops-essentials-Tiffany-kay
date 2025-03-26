@@ -1,6 +1,10 @@
 ### **🚀 MERN Blog Platform**  
 A **full-stack blog platform** built using **MongoDB, Express.js, React, and Node.js (MERN Stack)**. Users can create, read, update, and delete blog posts.  
 
+### Live URLs
+- **Frontend**: [https://your-frontend-url.vercel.app](https://mern-blog-platform-mu.vercel.app/)
+- **Backend**: [[https://your-backend-url.onrender.com](https://mern-blog-app-f9au.onrender.com)]
+
 ---
 
 ## **📌 Features**  
